@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 左上角的月份-->
+    <TextView
+        android:id="@+id/calendar_month"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true" />
+
+    <!-- 头顶上的星期列表-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/calendar_week"
+        android:layout_toRightOf="@id/calendar_month"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:overScrollMode="never"
+        android:layout_height="50dp">
+    </android.support.v4.view.ViewPager>
+
+    <!--左边时间列表-->
+    <com.example.suguiming.superclass.classTab.calendar.SGMScrollView
+        android:id="@+id/time_scroll"
+        android:scrollbars="none"
+        android:background="@color/white"
+        android:layout_below="@id/calendar_month"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:id="@+id/time_layout"
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </LinearLayout>
+    </com.example.suguiming.superclass.classTab.calendar.SGMScrollView>
+    <!-- 主要内容-->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/class_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_toRightOf="@id/time_scroll"
+        android:layout_below="@id/calendar_week"
+        />
+</RelativeLayout>
+<!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/calendar.xml -->

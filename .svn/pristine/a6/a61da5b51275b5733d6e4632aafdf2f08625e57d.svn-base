@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/father_view"
+    tools:context="com.example.suguiming.superclass.basic.BaseActivity">
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/title_tv"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:id="@+id/back_img"
+            android:onClick="backTaped"
+            android:layout_centerVertical="true"
+            android:src="@mipmap/back_img"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+
+<LinearLayout
+    android:onClick="backViewTaped"
+    android:id="@+id/main_view"
+    android:orientation="vertical"
+    android:background="@color/back_gray"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+</LinearLayout>
+
+</LinearLayout>
+</RelativeLayout>
+<!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/activity_basic.xml -->

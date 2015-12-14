@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.suguiming.superclass.studentTab.StudentListFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/title_tv"
+            android:text="学员列表"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+    <ListView
+        android:id="@+id/student_list"
+        android:divider="@color/light_gray"
+        android:dividerHeight="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+
+</LinearLayout>
+<!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/fragment_student_list.xml -->

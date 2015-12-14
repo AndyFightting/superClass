@@ -1,0 +1,30 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.suguiming.superclass.classTab.ClassFragment">
+
+    <!-- title View-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="45dp">
+        <TextView
+            android:id="@+id/title_tv"
+            android:text="日历排期"
+            android:gravity="center"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:background="@color/blue"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <!-- calendar View-->
+    <com.example.suguiming.superclass.classTab.calendar.SGMCalendar
+        android:id="@+id/calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>
+<!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/fragment_class.xml -->

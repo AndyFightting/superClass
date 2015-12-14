@@ -1,0 +1,107 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.suguiming.superclass.login.RegistActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/login_head"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="20dp"
+            android:src="@mipmap/radius_head"
+            android:layout_width="100dp"
+            android:layout_height="100dp" />
+
+        <!-- phone -->
+        <TextView
+            android:background="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+        <EditText
+            android:background="@color/white"
+            android:id="@+id/regist_phone_et"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:hint="请输入手机号"
+            android:inputType="number"
+            android:layout_height="50dp" />
+        <TextView
+            android:background="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <!-- pw -->
+        <EditText
+            android:background="@color/white"
+            android:gravity="center"
+            android:id="@+id/regist_pw_et"
+            android:layout_width="match_parent"
+            android:inputType="textPassword"
+            android:hint="请输入密码"
+            android:layout_height="50dp" />
+        <TextView
+            android:background="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <!-- 验证码-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:layout_height="50dp">
+            <EditText
+                android:id="@+id/regist_code_et"
+                android:background="@color/white"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:layout_height="50dp" />
+            <TextView
+                android:id="@+id/second_tv"
+                android:layout_width="35dp"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:clickable="true"
+                android:onClick="sendTaped"
+                android:id="@+id/send_tv"
+                android:textColor="@color/white"
+                android:text="发送验证码"
+                android:layout_marginRight="10dp"
+                android:gravity="center"
+                android:background="@color/green"
+                android:layout_width="100dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
+        <TextView
+            android:background="@color/light_gray"
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <!-- login -->
+        <Button
+            android:onClick="registTaped"
+            android:textSize="18sp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:id="@+id/login_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+<!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/activity_regist.xml -->

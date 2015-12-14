@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/suguiming/Documents/AndroidWork/SuperClass/app/libs/ormlite-core-4.48.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
+        <dex dex="/Users/suguiming/Documents/AndroidWork/SuperClass/app/build/intermediates/pre-dexed/debug/ormlite-core-4.48-91cd202de89731e6ce432b391b4a49c2949cabb5.jar" />
+    </item>
+    <item
+        jar="/Users/suguiming/Documents/AndroidWork/SuperClass/app/libs/ormlite-android-4.48.jar"
+        jumboMode="false"
+        revision="23.0.0"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="/Users/suguiming/Documents/AndroidWork/SuperClass/app/build/intermediates/pre-dexed/debug/ormlite-android-4.48-bf46aacd18a6911cf117a8f94c36b31deed81a4d.jar" />
+    </item>
+
+</items>

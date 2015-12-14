@@ -1,0 +1,206 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.suguiming.superclass.studentTab.StudentInfoActivity">
+
+    <RelativeLayout
+        android:id="@+id/mingcheng_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="名称"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/mingccheng_tv"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:layout_marginRight="40dp"
+            android:layout_centerVertical="true"
+            android:text="学员名字"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/xingbie_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="性别"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/xingbie_tv"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:layout_marginRight="40dp"
+            android:layout_centerVertical="true"
+            android:text="男"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/phone_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="手机号"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/phone_tv"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:layout_marginRight="40dp"
+            android:layout_centerVertical="true"
+            android:text="13123478364"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/remain_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="剩余课程"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/remain_tv"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:layout_marginRight="40dp"
+            android:layout_centerVertical="true"
+            android:text="10节"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/finished_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="已完成课程"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/nicheng_tv"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:layout_marginRight="40dp"
+            android:layout_centerVertical="true"
+            android:text="17节"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/total_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="课程总计"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/total_tv"
+            android:textSize="16sp"
+            android:layout_alignParentRight="true"
+            android:textColor="@color/gray"
+            android:layout_marginRight="40dp"
+            android:layout_centerVertical="true"
+            android:text="27节"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <TextView
+        android:clickable="true"
+        android:onClick="deleteStudent"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:text="删除学员"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/red"
+        android:layout_height="45dp" />
+
+
+</LinearLayout>

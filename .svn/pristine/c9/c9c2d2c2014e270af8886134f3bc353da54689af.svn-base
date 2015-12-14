@@ -1,0 +1,127 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.suguiming.superclass.login.MainActivity">
+    <!--fragments-->
+    <fragment
+        android:id="@+id/count_fg"
+        android:name="com.example.suguiming.superclass.countTab.CountFragment"
+        android:layout_above="@+id/tab_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_count">
+    </fragment>
+    <fragment
+        android:id="@+id/class_fg"
+        android:name="com.example.suguiming.superclass.classTab.ClassFragment"
+        android:layout_above="@+id/tab_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_count">
+    </fragment>
+    <fragment
+        android:id="@+id/student_fg"
+        android:name="com.example.suguiming.superclass.studentTab.StudentListFragment"
+        android:layout_above="@+id/tab_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_count">
+    </fragment>
+    <fragment
+        android:id="@+id/me_fg"
+        android:name="com.example.suguiming.superclass.meTab.MeFragment"
+        android:layout_above="@+id/tab_line"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_count">
+    </fragment>
+
+    <!-- 分割线 -->
+    <TextView
+        android:id="@+id/tab_line"
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dip"
+        android:layout_above="@+id/tabbar"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:id="@+id/tabbar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:id="@+id/tab_count_layout"
+            android:clickable="true"
+            android:onClick="tabTaped"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/tab_count_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/tab1" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_class_layout"
+            android:clickable="true"
+            android:onClick="tabTaped"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/tab_class_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/tab2" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_student_layout"
+            android:clickable="true"
+            android:onClick="tabTaped"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/tab_student_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/tab3"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/tab_me_layout"
+            android:clickable="true"
+            android:onClick="tabTaped"
+            android:gravity="center_horizontal"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/tab_me_img"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dip"
+                android:layout_marginBottom="5dp"
+                android:src="@mipmap/tab4"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day1"/>
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day2"/>
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day3"/>
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day4"/>
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day5"/>
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day6"/>
+    <include layout="@layout/calendar_week_day" android:id="@+id/week_day7"/>
+</LinearLayout><!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/component_calendar_week.xml -->

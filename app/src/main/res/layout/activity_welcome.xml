@@ -1,0 +1,52 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_blue"
+    tools:context="com.example.suguiming.superclass.login.WelcomeActivity">
+
+    //滚动页面
+    <android.support.v4.view.ViewPager
+        android:id="@+id/view_page"
+        android:overScrollMode="never"
+        android:requiresFadingEdge="none"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true">
+    </android.support.v4.view.ViewPager>
+
+    //底部四个点点
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:gravity="center"
+        android:layout_marginBottom="10dp"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/dot1"
+            android:background="@drawable/circle_dot_blue"
+            android:layout_width="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_height="10dp" />
+        <TextView
+            android:id="@+id/dot2"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/dot1"
+            android:background="@drawable/circle_dot_white"
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+        <TextView
+            android:id="@+id/dot3"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/dot2"
+            android:background="@drawable/circle_dot_white"
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+        <TextView
+            android:id="@+id/dot4"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/dot3"
+            android:background="@drawable/circle_dot_white"
+            android:layout_width="10dp"
+            android:layout_height="10dp" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.example.suguiming.superclass.countTab.CountCalendar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+</com.example.suguiming.superclass.countTab.CountCalendar>
+<!-- From: file:/Users/suguiming/Documents/AndroidWork/SuperClass/app/src/main/res/layout/calendar_count_page.xml -->

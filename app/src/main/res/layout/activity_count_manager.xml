@@ -1,0 +1,152 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.suguiming.superclass.meTab.CountManagerActivity">
+
+
+    <RelativeLayout
+        android:onClick="bindClick"
+        android:id="@+id/bind_phone_layout"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/bind_phone_img"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/bind_phone"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/count_phone_tv"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/count_phone_bt"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:text="未绑定"
+            android:gravity="center"
+            android:layout_width="70dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:onClick="bindClick"
+        android:id="@+id/bind_weixin_layout"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/bind_weixin_img"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/bind_weixin"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/count_weixin_tv"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/count_weixin_bt"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:text="未绑定"
+            android:gravity="center"
+            android:layout_width="70dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:onClick="bindClick"
+        android:id="@+id/bind_qq_layout"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/bind_qq_img"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/bind_qq"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/count_qq_tv"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/count_qq_bt"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:text="未绑定"
+            android:gravity="center"
+            android:layout_width="70dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:onClick="bindClick"
+        android:id="@+id/bind_weibo_layout"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:id="@+id/bind_weibo_img"
+            android:layout_marginLeft="15dp"
+            android:src="@mipmap/bind_weibo"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+        <TextView
+            android:id="@+id/count_weibo_tv"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:id="@+id/count_weibo_bt"
+            android:textColor="@color/white"
+            android:background="@color/green"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_alignParentRight="true"
+            android:text="未绑定"
+            android:gravity="center"
+            android:layout_width="70dp"
+            android:layout_height="30dp" />
+    </RelativeLayout>
+    <TextView
+        android:clickable="true"
+        android:onClick="logout"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:text="退出登录"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/red"
+        android:layout_height="45dp" />
+</LinearLayout>
