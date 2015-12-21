@@ -60,23 +60,25 @@ public class LoginActivity extends BaseActivity {
             return;
         }
 
-        Map<String ,Object>params = new HashMap<>();
-        params.put("phone", phoneTv.getText().toString());
-        params.put("password", passwordTv.getText().toString());
-        params.put("deviceType", "1");//Android
-        params.put("deviceToken", "token");
 
-        HttpHelper.showHud(this, "登录中...");
-        HttpHelper.doPostRequest(Task.HOST + "user/login", params, new RequestListener() {
-            @Override
-            public void requestSuccess(String response) {
-                doLoginSuccess(response);
-            }
-            @Override
-            public void requestFailed(VolleyError error,int code,String message) {
-
-            }
-        });
+        doLoginSuccess(null);
+//        Map<String ,Object>params = new HashMap<>();
+//        params.put("phone", phoneTv.getText().toString());
+//        params.put("password", passwordTv.getText().toString());
+//        params.put("deviceType", "1");//Android
+//        params.put("deviceToken", "token");
+//
+//        HttpHelper.showHud(this, "登录中...");
+//        HttpHelper.doPostRequest(Task.HOST + "user/login", params, new RequestListener() {
+//            @Override
+//            public void requestSuccess(String response) {
+//                doLoginSuccess(response);
+//            }
+//            @Override
+//            public void requestFailed(VolleyError error,int code,String message) {
+//
+//            }
+//        });
 
     }
 
