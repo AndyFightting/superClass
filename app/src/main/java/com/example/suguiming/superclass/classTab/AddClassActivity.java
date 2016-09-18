@@ -2,32 +2,22 @@ package com.example.suguiming.superclass.classTab;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.TranslateAnimation;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.LinearLayout;
-import android.widget.ListView;
-import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.BaseActivity;
-import com.example.suguiming.superclass.basic.DateUtil;
+import com.example.suguiming.superclass.basic.BaseSwipeActivity;
+import com.example.suguiming.superclass.utils.DateUtil;
 
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.Map;
 
-public class AddClassActivity extends BaseActivity {
+public class AddClassActivity extends BaseSwipeActivity {
 
     private LinearLayout tapLayout;
     private TextView studentTv;
@@ -44,8 +34,7 @@ public class AddClassActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setMainView(R.layout.activity_add_class);
-        titleTv.setText("添加课程");
+        setContentView(R.layout.activity_add_class);
 
         tapLayout = (LinearLayout)findViewById(R.id.tap_layout);
         studentTv = (TextView)findViewById(R.id.student_tv);

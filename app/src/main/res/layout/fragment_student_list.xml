@@ -5,26 +5,43 @@
     android:orientation="vertical"
     tools:context="com.example.suguiming.superclass.studentTab.StudentListFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_height"
+        android:background="@color/blue">
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="@dimen/title_height">
+
         <TextView
             android:id="@+id/title_tv"
-            android:text="学员列表"
-            android:gravity="center"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:background="@color/blue"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:gravity="center"
+            android:text="学员列表"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/student_add_image"
+            android:layout_width="50dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:scaleType="fitCenter"
+            android:src="@mipmap/add" />
     </RelativeLayout>
+
     <ListView
         android:id="@+id/student_list"
-        android:divider="@color/light_gray"
-        android:dividerHeight="1dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:divider="@color/light_gray"
+        android:dividerHeight="0.5dp">
     </ListView>
-
 
 </LinearLayout>

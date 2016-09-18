@@ -1,5 +1,6 @@
 package com.example.suguiming.superclass.basic;
 
+import android.app.Activity;
 import android.app.Fragment;
 import android.content.Context;
 import android.util.Log;
@@ -9,13 +10,14 @@ import android.util.Log;
  */
 public class BaseFragment extends Fragment {
 
+
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
+    }
+
+    public void tabClicked() {
 
     }
 
-    public void log(String message){
-        Log.i("myLog", message);
-    }
 }

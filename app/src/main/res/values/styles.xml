@@ -3,9 +3,14 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <!--Android 5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色-->
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    //hud
+    <!--hud theme-->
     <style name="dialog" parent="@android:style/Theme.Dialog">
         <item name="android:windowFrame">@null</item>
         <!-- 边框 -->
@@ -19,6 +24,21 @@
         <item name="android:windowBackground">@drawable/hud_shape</item>
         <item name="android:backgroundDimEnabled">true</item>
         <!-- 周围变暗 -->
+    </style>
+
+    <!--手势返回theme-->
+    <style name="BackSwipeTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:windowAnimationStyle">@style/ActivitySwipeBackAnimation</item>
+    </style>
+    <style name="ActivitySwipeBackAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_swipe_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_swipe_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_swipe_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_swipe_out</item>
     </style>
 
 

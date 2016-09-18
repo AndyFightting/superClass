@@ -13,10 +13,9 @@ import android.widget.BaseAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.DateUtil;
+import com.example.suguiming.superclass.utils.DateUtil;
 
 /**
  * Created by suguiming on 15/10/27.

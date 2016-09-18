@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.DateUtil;
+import com.example.suguiming.superclass.utils.DateUtil;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;

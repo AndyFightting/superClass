@@ -5,10 +5,10 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.BaseActivity;
-import com.example.suguiming.superclass.basic.CircleImageView;
+import com.example.suguiming.superclass.basic.BaseSwipeActivity;
+import com.example.suguiming.superclass.customView.CircleImageView;
 
-public class BasicInfoActivity extends BaseActivity {
+public class BasicInfoActivity extends BaseSwipeActivity {
 
     private CircleImageView headImage;
     private TextView nichengTv;
@@ -19,8 +19,7 @@ public class BasicInfoActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setMainView(R.layout.activity_basic_info);
-        titleTv.setText("基本资料");
+        setContentView(R.layout.activity_basic_info);
 
         headImage = (CircleImageView)findViewById(R.id.header_image);
         nichengTv = (TextView)findViewById(R.id.nicheng_tv);

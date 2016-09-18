@@ -11,9 +11,9 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.DateUtil;
+import com.example.suguiming.superclass.utils.DateUtil;
 import com.example.suguiming.superclass.classTab.AddClassActivity;
-import java.text.SimpleDateFormat;
+
 import java.util.Calendar;
 import java.util.Date;
 

@@ -10,12 +10,15 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.example.suguiming.superclass.MainActivity;
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.BaseFragment;
-import com.example.suguiming.superclass.basic.CircleImageView;
-import com.squareup.picasso.Picasso;
+import com.example.suguiming.superclass.customView.CircleImageView;
 
 public class MeFragment extends BaseFragment {
+
+    public MainActivity mainActivity;
 
     private ListView meListView;
     private TextView nameTv;
@@ -32,11 +35,11 @@ public class MeFragment extends BaseFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View contentView = inflater.inflate(R.layout.fragment_me, container, false);
-        nameTv = (TextView)contentView.findViewById(R.id.name_tv);
-        siginTv = (TextView)contentView.findViewById(R.id.sign_tv);
-        headImgView = (CircleImageView)contentView.findViewById(R.id.header_image);
+        nameTv = (TextView) contentView.findViewById(R.id.name_tv);
+        siginTv = (TextView) contentView.findViewById(R.id.sign_tv);
+        headImgView = (CircleImageView) contentView.findViewById(R.id.header_image);
 
-        meListView = (ListView)contentView.findViewById(R.id.me_list);
+        meListView = (ListView) contentView.findViewById(R.id.me_list);
         meListView.setAdapter(new MeListAdapter());
         meListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -53,7 +56,7 @@ public class MeFragment extends BaseFragment {
                         break;
                     }
                     case 2: {
-                        Intent countIntent = new Intent(getActivity(),CountManagerActivity.class);
+                        Intent countIntent = new Intent(getActivity(), CountManagerActivity.class);
                         startActivity(countIntent);
 
                         break;
@@ -63,10 +66,6 @@ public class MeFragment extends BaseFragment {
         });
 
         return contentView;
-    }
-
-    public void tabClicked(){
-
     }
 
     private class MeListAdapter extends BaseAdapter{

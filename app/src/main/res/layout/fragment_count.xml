@@ -6,9 +6,15 @@
     android:background="@color/back_gray"
     tools:context="com.example.suguiming.superclass.countTab.CountFragment">
 
+    <LinearLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_height">
+    </LinearLayout>
+
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="@dimen/title_height">
         <TextView
             android:text="我的统计"
             android:gravity="center"

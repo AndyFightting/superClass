@@ -1,21 +1,24 @@
 package com.example.suguiming.superclass.countTab;
 
 import android.os.Bundle;
-import android.app.Fragment;
 import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import com.example.suguiming.superclass.MainActivity;
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.BaseFragment;
-import com.example.suguiming.superclass.basic.DateUtil;
+import com.example.suguiming.superclass.utils.DateUtil;
 import com.example.suguiming.superclass.classTab.calendar.SGMCalendar;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CountFragment extends BaseFragment implements View.OnClickListener{
+
+    public MainActivity mainActivity;
 
     private TextView titleTv;
     private TextView preMonthBt;
@@ -142,9 +145,6 @@ public class CountFragment extends BaseFragment implements View.OnClickListener{
 
         countPager.setAdapter(new CountCalendarAdapter(calendarViewList));
         countPager.setCurrentItem(1);
-    }
-    public void tabClicked(){
-
     }
 
     @Override

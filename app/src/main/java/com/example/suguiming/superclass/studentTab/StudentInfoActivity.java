@@ -4,15 +4,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.BaseActivity;
+import com.example.suguiming.superclass.basic.BaseSwipeActivity;
 
-public class StudentInfoActivity extends BaseActivity {
+public class StudentInfoActivity extends BaseSwipeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setMainView(R.layout.activity_student_info);
-        titleTv.setText("学员信息");
+        setContentView(R.layout.activity_student_info);
     }
 
     public void itemTaped(View view){

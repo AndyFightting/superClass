@@ -4,15 +4,14 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.BaseActivity;
+import com.example.suguiming.superclass.basic.BaseSwipeActivity;
 
-public class ClassSynActivity extends BaseActivity {
+public class ClassSynActivity extends BaseSwipeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setMainView(R.layout.activity_class_syn);
-        titleTv.setText("日历同步");
+        setContentView(R.layout.activity_class_syn);
     }
 
     public void beginTimeTap(View view){

@@ -5,12 +5,18 @@
     android:orientation="vertical"
     tools:context="com.example.suguiming.superclass.meTab.MeFragment">
 
+    <LinearLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_height">
+    </LinearLayout>
+
     <RelativeLayout
         android:background="@color/blue"
         android:layout_width="match_parent"
         android:layout_height="160dp">
 
-        <com.example.suguiming.superclass.basic.CircleImageView
+        <com.example.suguiming.superclass.customView.CircleImageView
             android:id="@+id/header_image"
             android:layout_width="80dp"
             android:layout_height="80dp"

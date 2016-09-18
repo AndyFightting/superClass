@@ -5,10 +5,16 @@
     android:orientation="vertical"
     tools:context="com.example.suguiming.superclass.classTab.ClassFragment">
 
+    <LinearLayout
+        android:background="@color/blue"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/status_height">
+    </LinearLayout>
+
     <!-- title View-->
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="45dp">
+        android:layout_height="@dimen/title_height">
         <TextView
             android:id="@+id/title_tv"
             android:text="日历排期"

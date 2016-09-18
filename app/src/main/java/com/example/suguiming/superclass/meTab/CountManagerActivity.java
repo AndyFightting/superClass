@@ -1,20 +1,17 @@
 package com.example.suguiming.superclass.meTab;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 import com.example.suguiming.superclass.R;
-import com.example.suguiming.superclass.basic.BaseActivity;
-import com.example.suguiming.superclass.login.LoginActivity;
+import com.example.suguiming.superclass.basic.BaseSwipeActivity;
 
-public class CountManagerActivity extends BaseActivity {
+public class CountManagerActivity extends BaseSwipeActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setMainView(R.layout.activity_count_manager);
-        titleTv.setText("账号管理");
+        setContentView(R.layout.activity_count_manager);
 
 
     }
@@ -24,9 +21,7 @@ public class CountManagerActivity extends BaseActivity {
     }
 
     public void logout(View view){
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
-        finish();
+
     }
 
 

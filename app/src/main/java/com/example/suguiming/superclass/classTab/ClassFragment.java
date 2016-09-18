@@ -6,11 +6,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.example.suguiming.superclass.MainActivity;
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.BaseFragment;
 
 
 public class ClassFragment extends BaseFragment {
+
+    public MainActivity mainActivity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -26,8 +29,6 @@ public class ClassFragment extends BaseFragment {
         return view;
 
     }
-
-    public void tabClicked(){}
 
 
 }

@@ -6,6 +6,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
+import com.example.suguiming.superclass.http.MultiPartStack;
 
 /**
  * Created by suguiming on 15/11/2.
@@ -21,6 +22,9 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         myApplication = this;
+
+
+
     }
 
     public static synchronized MyApplication getInstance() {
