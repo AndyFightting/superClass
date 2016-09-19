@@ -17,47 +17,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity" />
 
         <activity
-            android:name=".basic.BaseActivity"
-            android:label="@string/title_activity_basic">
+            android:name=".meTab.CountManagerActivity" />
 
-        </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main">
+            android:name=".meTab.ClassSynActivity" />
 
-        </activity>
         <activity
-            android:name=".meTab.CountManagerActivity"
-            android:label="@string/title_activity_count_manager">
+            android:name=".meTab.BasicInfoActivity" />
 
-        </activity>
-        <activity
-            android:name=".meTab.ClassSynActivity"
-            android:label="@string/title_activity_class_syn">
-
-        </activity>
-        <activity
-            android:name=".meTab.BasicInfoActivity"
-            android:label="@string/title_activity_basic_info">
-
-        </activity>
         <activity
             android:name=".studentTab.StudentInfoActivity"
-            android:label="@string/title_activity_student_info">
-
-        </activity>
+            android:theme="@style/BackSwipeTheme" />
         <activity
-            android:name=".classTab.AddClassActivity"
-            android:label="@string/title_activity_add_class">
-
-        </activity>
+            android:name=".classTab.AddClassActivity" />
 
         <activity
             android:name=".studentTab.StudentAddActivity"
-            android:theme="@style/BackSwipeTheme">
-        </activity>
+            android:theme="@style/BackSwipeTheme" />
+        <activity
+            android:name=".studentTab.info.EditNameSheet"
+            android:theme="@style/ActionSheetTheme" />
+        <activity
+            android:name=".studentTab.info.GenderSheet"
+            android:theme="@style/ActionSheetTheme" />
+        <activity
+            android:name=".studentTab.info.PhoneSheet"
+            android:theme="@style/ActionSheetTheme" />
+
+        <activity android:name=".studentTab.info.RemainCountSheet"
+            android:theme="@style/ActionSheetTheme" />
+
     </application>
 
 </manifest>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context="com.example.suguiming.superclass.studentTab.info.GenderSheet">
+
+    <LinearLayout
+        android:layout_alignParentBottom="true"
+        android:background="@color/light_gray"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/nan_layout"
+            android:onClick="imageTaped"
+            android:clickable="true"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="男"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/nan_image"
+                android:visibility="gone"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/sheet_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/nv_layout"
+            android:onClick="imageTaped"
+            android:clickable="true"
+            android:layout_marginTop="1dp"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+            <TextView
+                android:layout_marginLeft="15dp"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:text="女"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+            <ImageView
+                android:id="@+id/nv_image"
+                android:visibility="gone"
+                android:layout_marginRight="20dp"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/sheet_yes"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</RelativeLayout>

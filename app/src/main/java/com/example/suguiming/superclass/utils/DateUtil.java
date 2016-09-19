@@ -190,4 +190,13 @@ public class DateUtil {
         return calendar.getTime();
     }
 
+    //把1 变成 01
+    public static String getNumStrig(int num) {
+        if (0 <= num && num <= 9) {
+            return "0" + num;
+        } else {
+            return num + "";
+        }
+    }
+
 }

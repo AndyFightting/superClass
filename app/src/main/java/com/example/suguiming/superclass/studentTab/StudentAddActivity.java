@@ -23,6 +23,7 @@ public class StudentAddActivity extends BaseSwipeActivity {
         titleTv.setText("添加学员");
 
         nameEv = (EditText) findViewById(R.id.name_ev);
+        CommonUtil.showKeyboard(nameEv);
     }
 
     public void submitTap(View v) {
@@ -40,17 +41,11 @@ public class StudentAddActivity extends BaseSwipeActivity {
 
         StudentModel newStudent = new StudentModel();
         newStudent.nameString = name;
-        StudentModel.addStudent(newStudent);
-
-        OttoUtil.studentAdd(newStudent);
+        StudentModel.addStudent(newStudent,true);
 
         nameEv.setText("");
         nameEv.setHint("继续添加");
         CommonUtil.showToast("添加成功");
-    }
-
-    public void backImageTap(View v) {
-        finish();
     }
 
     @Override

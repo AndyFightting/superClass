@@ -4,6 +4,7 @@ import android.support.annotation.Nullable;
 
 import com.example.suguiming.superclass.database.DatabaseHelper;
 import com.example.suguiming.superclass.utils.CommonUtil;
+import com.example.suguiming.superclass.utils.OttoUtil;
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.stmt.DeleteBuilder;
@@ -26,12 +27,12 @@ public class StudentModel {
     public int id;
 
     @DatabaseField(columnName = "idString",uniqueIndexName = "")
-    public String idString;//唯一字符串ID
+    public String idString;//不空,唯一字符串ID
 
     @DatabaseField(columnName = "nameString")
-    public String nameString;//不空
+    public String nameString;//不空,唯一
 
-    @DatabaseField(columnName = "gender")
+    @DatabaseField(columnName = "gender")//0默认,1男,2女
     public int gender;
 
     @DatabaseField(columnName = "phoneString",defaultValue = "")
@@ -130,27 +131,36 @@ public class StudentModel {
     private static DatabaseHelper helper = DatabaseHelper.getHelper();
     private static Dao<StudentModel, Integer> studentDao = helper.getDao(StudentModel.class);
 
-    public static void addStudent(StudentModel model) {
+    public static void addStudent(StudentModel model, boolean notify) {
         try {
             if (CommonUtil.isEmpty(model.idString)) {
                 model.idString = CommonUtil.getUniqueString(12);
             }
             studentDao.createIfNotExists(model);
+
+            if (notify){
+                OttoUtil.studentAdd(model);
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public static void updateStudent(StudentModel model) {
+    public static void updateStudent(StudentModel model,boolean notify) {
         try {
             studentDao.update(model);
+
+            if (notify){
+                OttoUtil.studentUpdate(model);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
     @Nullable
-    public static StudentModel getStudent(String idString) {
+    public static StudentModel getStudent(String idString) {//使用要判断是不是空!!
         try {
             QueryBuilder<StudentModel, Integer> queryBuilder = studentDao.queryBuilder();
             Where<StudentModel, Integer> where = queryBuilder.where();
@@ -168,7 +178,11 @@ public class StudentModel {
     }
 
     public static boolean isIn(String nameString) {
-        List<StudentModel> list = getStudents(nameString);
+        if (CommonUtil.isEmpty(nameString)){
+            return false;
+        }
+
+        List<StudentModel> list = getStudents(nameString.trim());
         if (list != null && list.size() > 0) {
             return true;
         }
@@ -204,12 +218,18 @@ public class StudentModel {
         return new ArrayList<>();
     }
 
-    public static void deleteStudent(String idString) {
+    public static void deleteStudent(String idString,boolean notify) {
         try {
+            StudentModel model = getStudent(idString);
+            if (notify && model!=null){
+                OttoUtil.studentDelete(model);
+            }
+
             DeleteBuilder<StudentModel, Integer> deleteBuilder = studentDao.deleteBuilder();
             Where<StudentModel, Integer> where = deleteBuilder.where();
             where.eq("idString", idString);
             deleteBuilder.delete();
+
         } catch (Exception e) {
             e.printStackTrace();
         }

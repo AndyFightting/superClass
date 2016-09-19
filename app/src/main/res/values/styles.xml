@@ -41,5 +41,27 @@
         <item name="android:activityCloseExitAnimation">@anim/activity_swipe_out</item>
     </style>
 
+    <!--透明Activity theme-->
+    <style name="AlphaTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+
+    <!-- iOs action sheet theme-->
+    <style name="ActionSheetTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:windowAnimationStyle">@style/ActionSheetAnimation</item>
+    </style>
+    <style name="ActionSheetAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/action_sheet_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/action_sheet_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/action_sheet_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/action_sheet_out</item>
+    </style>
 
 </resources>

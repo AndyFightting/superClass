@@ -11,25 +11,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/black"
-                android:text="名字" />
+                android:textColor="@color/black"/>
         <TextView
             android:id="@+id/info_tv"
             android:layout_marginTop="5dp"
             android:paddingBottom="10dp"
             android:layout_below="@+id/name_tv"
             android:layout_marginLeft="15dp"
-            android:text="剩余课程数:0   已完成课程数:0"
             android:layout_width="wrap_content"
             android:textColor="@color/gray"
             android:layout_height="wrap_content" />
-    <ImageView
-        android:id="@+id/phone_img"
-        android:src="@mipmap/bind_phone"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="15dp"
-        android:layout_alignParentRight="true"
-        android:layout_width="40dp"
-        android:layout_height="40dp" />
-
 </RelativeLayout>

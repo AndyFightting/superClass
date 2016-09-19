@@ -16,8 +16,6 @@ public class BaseFragment extends Fragment {
         super.onAttach(context);
     }
 
-    public void tabClicked() {
-
-    }
+    public void tabClicked() {}
 
 }

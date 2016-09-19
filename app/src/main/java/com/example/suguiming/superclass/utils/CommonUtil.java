@@ -3,7 +3,10 @@ package com.example.suguiming.superclass.utils;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.os.Handler;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.EditText;
 import android.widget.Toast;
 import com.example.suguiming.superclass.basic.MyApplication;
 
@@ -22,6 +25,16 @@ public class CommonUtil {
         }else {
             return false;
         }
+    }
+
+    public static boolean isPhoneNum(String string){
+        if (!isEmpty(string) && string.length() == 11){
+            String first = string.substring(0,1);
+            if (first.equals("1")){
+                return true;
+            }
+        }
+        return false;
     }
 
     public static void showToast(String msg){
@@ -45,6 +58,35 @@ public class CommonUtil {
             imm.hideSoftInputFromWindow(activity.getCurrentFocus().getWindowToken(), 0);
         }catch (Exception e){
             e.printStackTrace();
+        }
+    }
+
+    public static void showKeyboard(final EditText editText){
+        try{
+            editText.setFocusable(true);
+            editText.setFocusableInTouchMode(true);
+            editText.requestFocus();
+
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    InputMethodManager inputMethodManager=(InputMethodManager) application.getSystemService(Context.INPUT_METHOD_SERVICE);
+                    inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
+                    inputMethodManager.showSoftInput(editText,0);
+                }
+            }, 300);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public static String getGenderString(int gender){
+        if (gender == 1){
+            return "男";
+        }else if(gender == 2){
+            return "女";
+        }else {
+            return "";
         }
     }
 

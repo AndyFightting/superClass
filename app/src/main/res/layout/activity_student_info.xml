@@ -5,10 +5,12 @@
     android:orientation="vertical"
     tools:context="com.example.suguiming.superclass.studentTab.StudentInfoActivity">
 
+    <include layout="@layout/common_title_layout"/>
+
     <RelativeLayout
-        android:id="@+id/mingcheng_layout"
+        android:id="@+id/name_layout"
         android:onClick="itemTaped"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="15dp"
         android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="50dp">
@@ -21,7 +23,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/mingccheng_tv"
+            android:id="@+id/name_tv"
             android:textSize="16sp"
             android:layout_alignParentRight="true"
             android:textColor="@color/gray"
@@ -39,7 +41,7 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/xingbie_layout"
+        android:id="@+id/gender_layout"
         android:onClick="itemTaped"
         android:layout_marginTop="1dp"
         android:background="@color/white"
@@ -54,7 +56,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/xingbie_tv"
+            android:id="@+id/gender_tv"
             android:textSize="16sp"
             android:layout_alignParentRight="true"
             android:textColor="@color/gray"
@@ -71,6 +73,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
+
     <RelativeLayout
         android:id="@+id/phone_layout"
         android:onClick="itemTaped"
@@ -94,6 +97,53 @@
             android:layout_marginRight="40dp"
             android:layout_centerVertical="true"
             android:text="13123478364"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/photo_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="相册记录"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:src="@mipmap/right_arrow"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/remark_layout"
+        android:onClick="itemTaped"
+        android:layout_marginTop="1dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <TextView
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:text="备注信息"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <ImageView
@@ -139,8 +189,6 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/finished_layout"
-        android:onClick="itemTaped"
         android:layout_marginTop="1dp"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -154,7 +202,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <TextView
-            android:id="@+id/nicheng_tv"
+            android:id="@+id/finish_tv"
             android:textSize="16sp"
             android:layout_alignParentRight="true"
             android:textColor="@color/gray"
@@ -165,8 +213,6 @@
             android:layout_height="wrap_content" />
     </RelativeLayout>
     <RelativeLayout
-        android:id="@+id/total_layout"
-        android:onClick="itemTaped"
         android:layout_marginTop="1dp"
         android:background="@color/white"
         android:layout_width="match_parent"
@@ -190,6 +236,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </RelativeLayout>
+
     <TextView
         android:clickable="true"
         android:onClick="deleteStudent"

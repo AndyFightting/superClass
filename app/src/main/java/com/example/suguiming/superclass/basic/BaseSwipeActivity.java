@@ -62,7 +62,9 @@ public class BaseSwipeActivity extends AppCompatActivity{
         containerLayout.addView(tmpView);
     }
 
-    public void backViewTap(View v){
+    public void backViewTap(View v){}
 
+    public void backImageTap(View v) {
+        finish();
     }
 }

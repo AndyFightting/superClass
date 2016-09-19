@@ -1,8 +1,8 @@
 package com.example.suguiming.superclass.studentTab;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +29,6 @@ import java.util.List;
 public class StudentListFragment extends BaseFragment implements View.OnClickListener {
 
     public MainActivity mainActivity;
-
     private ImageView addImage;
 
     private List<StudentModel> studentModelList = new ArrayList<>();
@@ -45,23 +44,29 @@ public class StudentListFragment extends BaseFragment implements View.OnClickLis
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_student_list, container, false);
-
-        addImage = (ImageView) view.findViewById(R.id.student_add_image);
-        addImage.setOnClickListener(this);
-
-        listView = (ListView) view.findViewById(R.id.student_list);
-        listView.setAdapter(new StudentAdapter());
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(), StudentInfoActivity.class);
-                startActivity(intent);
-            }
-        });
+        initListView(view);
+        refreshListView();
 
         OttoUtil.getInstance().register(this);
 
         return view;
+    }
+
+    private void initListView(View containerView){
+        addImage = (ImageView) containerView.findViewById(R.id.student_add_image);
+        addImage.setOnClickListener(this);
+
+        listView = (ListView) containerView.findViewById(R.id.student_list);
+        adapter = new StudentAdapter();
+        listView.setAdapter(adapter);
+
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                StudentModel model = studentModelList.get(i);
+                StudentInfoActivity.startActivity(mainActivity,model.getIdString());
+            }
+        });
     }
 
     @Override
@@ -74,53 +79,14 @@ public class StudentListFragment extends BaseFragment implements View.OnClickLis
         studentModelList.clear();
         studentModelList.addAll(StudentModel.getAllStudents());
 
-
-
-
+        adapter.notifyDataSetChanged();
     }
 
-
-    private class StudentAdapter extends BaseAdapter {
-        @Override
-        public int getCount() {
-            return studentModelList.size();
-        }
-
-        @Override
-        public Object getItem(int i) {
-            return new Integer(i);
-        }
-
-        @Override
-        public long getItemId(int i) {
-            return i;
-        }
-
-        @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
-            ViewHolder viewHolder;
-            if (view == null) {
-                LayoutInflater inflater = LayoutInflater.from(StudentListFragment.this.getActivity());
-                view = inflater.inflate(R.layout.item_student_list, null);
-
-                viewHolder = new ViewHolder();
-                viewHolder.nameTv = (TextView) view.findViewById(R.id.name_tv);
-                viewHolder.infoTv = (TextView) view.findViewById(R.id.info_tv);
-                viewHolder.phoneImg = (ImageView) view.findViewById(R.id.phone_img);
-                view.setTag(viewHolder);
-            } else {
-                viewHolder = (ViewHolder) view.getTag();
-            }
-            //-------设置值-------
-
-
-            return view;
-        }
-
-        private class ViewHolder {
-            ImageView phoneImg;
-            TextView nameTv;
-            TextView infoTv;
+    @Override
+    public void tabClicked() {
+        if (studentModelList.size()<1){
+            Intent intent = new Intent(mainActivity, StudentAddActivity.class);
+            mainActivity.startActivity(intent);
         }
     }
 
@@ -134,6 +100,7 @@ public class StudentListFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
+    //---------接收otto通知---------
     @Subscribe
     public void ottoReceiveNotify(StudentModel model) {
         if (model.notifyType.equals(StudentModel.ADD)){
@@ -142,6 +109,55 @@ public class StudentListFragment extends BaseFragment implements View.OnClickLis
             refreshListView();
         }else if (model.notifyType.equals(StudentModel.DELETE)){
             refreshListView();
+        }
+    }
+
+    //------------------adapter------------------------
+    private class StudentAdapter extends BaseAdapter {
+        @Override
+        public int getCount() {
+            return studentModelList.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return studentModelList.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            ViewHolder viewHolder;
+            StudentModel model = studentModelList.get(i);
+
+            if (view == null) {
+                LayoutInflater inflater = LayoutInflater.from(StudentListFragment.this.getActivity());
+                view = inflater.inflate(R.layout.item_student_list, null);
+
+                viewHolder = new ViewHolder();
+                viewHolder.nameTv = (TextView) view.findViewById(R.id.name_tv);
+                viewHolder.infoTv = (TextView) view.findViewById(R.id.info_tv);
+
+                view.setTag(viewHolder);
+            } else {
+                viewHolder = (ViewHolder) view.getTag();
+            }
+            //-------设置值-------
+            String infoString ="剩余课程数:"+model.getRemainCount()+"  已完成课程数:"+model.getFinishCount();
+
+            viewHolder.nameTv.setText(model.getNameString());
+            viewHolder.infoTv.setText(infoString);
+
+            return view;
+        }
+
+        private class ViewHolder {
+            TextView nameTv;
+            TextView infoTv;
         }
     }
 }

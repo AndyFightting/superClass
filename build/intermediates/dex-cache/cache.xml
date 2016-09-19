@@ -1,2 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
+
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="f21a02d64681bf6f23c34f9eb5520d14d6e03dbb">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5f701c21af8e67940be02b89a5b5a41e808cfb68/classes.dex" />
+    </item>
+
+</items>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/white"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/sheet_title_tv"
+        android:textColor="@color/gray"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
+
+    <ImageView
+        android:id="@+id/sheet_close"
+        android:onClick="imageTaped"
+        android:clickable="true"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/sheet_close"
+        android:layout_width="25dp"
+        android:layout_height="25dp" />
+
+    <ImageView
+        android:id="@+id/sheet_yes"
+        android:onClick="imageTaped"
+        android:clickable="true"
+        android:layout_marginRight="5dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:src="@mipmap/sheet_yes"
+        android:layout_width="50dp"
+        android:layout_height="25dp" />
+</RelativeLayout>
