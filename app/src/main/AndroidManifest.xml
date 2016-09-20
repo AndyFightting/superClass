@@ -3,6 +3,7 @@
     package="com.example.suguiming.superclass">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:name=".basic.MyApplication"
@@ -17,24 +18,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".MainActivity" />
-
-        <activity
-            android:name=".meTab.CountManagerActivity" />
-
-        <activity
-            android:name=".meTab.ClassSynActivity" />
-
-        <activity
-            android:name=".meTab.BasicInfoActivity" />
-
+        <activity android:name=".MainActivity" />
+        <activity android:name=".meTab.CountManagerActivity" />
+        <activity android:name=".meTab.ClassSynActivity" />
+        <activity android:name=".meTab.BasicInfoActivity" />
         <activity
             android:name=".studentTab.StudentInfoActivity"
             android:theme="@style/BackSwipeTheme" />
-        <activity
-            android:name=".classTab.AddClassActivity" />
-
+        <activity android:name=".classTab.AddClassActivity" />
         <activity
             android:name=".studentTab.StudentAddActivity"
             android:theme="@style/BackSwipeTheme" />
@@ -47,9 +38,19 @@
         <activity
             android:name=".studentTab.info.PhoneSheet"
             android:theme="@style/ActionSheetTheme" />
-
-        <activity android:name=".studentTab.info.RemainCountSheet"
+        <activity
+            android:name=".studentTab.info.RemainCountSheet"
             android:theme="@style/ActionSheetTheme" />
+        <activity
+            android:name=".studentTab.info.StudentRemarkActivity"
+            android:theme="@style/BackSwipeTheme" />
+        <activity
+            android:name=".studentTab.info.StudentPhotoRecordActivity"
+            android:theme="@style/BackSwipeTheme" />
+        <activity android:name=".studentTab.info.StudentFinishedCourseActivity"
+            android:theme="@style/BackSwipeTheme" />
+        <activity android:name=".studentTab.info.PhotoSheet"
+            android:theme="@style/ActionSheetTheme"/>
 
     </application>
 

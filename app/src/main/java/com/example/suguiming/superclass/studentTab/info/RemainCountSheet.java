@@ -25,6 +25,13 @@ public class RemainCountSheet extends BaseSheetActivity {
         refreshPK(currentCount);
     }
 
+    @Override
+    protected void onDestroy() {
+        //---类数据还原----
+        currentCount = 0;
+        super.onDestroy();
+    }
+
     private void initPK(){
         countPicker = (CustomNumberPicker) findViewById(R.id.count_pk);
         countPicker.setMinValue(0);

@@ -11,7 +11,8 @@ import com.example.suguiming.superclass.utils.CommonUtil;
 
 public class PhoneSheet extends BaseSheetActivity {
 
-    private EditText phoneEv;
+    private static EditText phoneEv;
+    private static String prePhone;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +23,22 @@ public class PhoneSheet extends BaseSheetActivity {
         titleTv.setText("修改手机号");
 
         phoneEv = (EditText) findViewById(R.id.phone_ev);
+        phoneEv.setText(prePhone);
         CommonUtil.showKeyboard(phoneEv);
+    }
+
+    public static void setPrePhone(String phone){
+        prePhone = phone;
+        if (phoneEv!=null){
+            phoneEv.setText(prePhone);
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        //---类数据还原----
+        prePhone = "";
+        super.onDestroy();
     }
 
     public void imageTaped(View v) {

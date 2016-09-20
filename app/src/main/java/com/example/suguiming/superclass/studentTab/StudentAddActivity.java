@@ -44,7 +44,7 @@ public class StudentAddActivity extends BaseSwipeActivity {
         StudentModel.addStudent(newStudent,true);
 
         nameEv.setText("");
-        nameEv.setHint("继续添加");
+        nameEv.setHint("添加成功, 继续添加");
         CommonUtil.showToast("添加成功");
     }
 

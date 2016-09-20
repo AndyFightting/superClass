@@ -24,6 +24,13 @@ public class GenderSheet extends BaseSheetActivity {
         refreshView(currentGender);
     }
 
+    @Override
+    protected void onDestroy() {
+        //---类数据还原----
+        currentGender = 0;
+        super.onDestroy();
+    }
+
     public static void refreshView(int gender){//0默认,1男,2女
         currentGender = gender;
         if (nanImage==null || nvImage==null){

@@ -4,9 +4,15 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class DateUtil {
+
+    public static SimpleDateFormat fullFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
+    public static SimpleDateFormat halfFormat = new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault());
+    public static SimpleDateFormat yrFormat =  new SimpleDateFormat("MM月dd日",Locale.getDefault());
+    public static SimpleDateFormat sfFormat = new SimpleDateFormat("HH:mm",Locale.getDefault());
 
     public static int getCurrentYear() {
         return Calendar.getInstance().get(Calendar.YEAR);
@@ -57,9 +63,8 @@ public class DateUtil {
 
    //是否为同一天
     public static boolean isSameDay(Date date1,Date date2){
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-        String ds1 = sdf.format(date1);
-        String ds2 = sdf.format(date2);
+        String ds1 = halfFormat.format(date1);
+        String ds2 = halfFormat.format(date2);
         if (ds1.equals(ds2)) {
             return true;
         } else {
@@ -81,16 +86,15 @@ public class DateUtil {
     }
 
     //星期天第一列，从1开始
-    public static String stringOfWeek(int week){
+    public static String getWeekString(int week){
         String[] weeks = {"周日","周一","周二","周三","周四","周五","周六"};
         return weeks[week-1];
     }
 
     //yyyy-MM-dd HH:mm:ss   转  date
-    public static Date stringToDate(String timeStr){
-        SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static Date getDateFromFullString(String timeStr){
         try {
-            return formater.parse(timeStr);
+            return fullFormat.parse(timeStr);
         }catch (Exception e){
           e.printStackTrace();
         }
@@ -98,21 +102,18 @@ public class DateUtil {
     }
 
    //date  转  yyyy-MM-dd HH:mm:ss
-    public static String dateToString(Date date){
-        SimpleDateFormat formater = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-         return   formater.format(date);
+    public static String getFullStringFromDate(Date date){
+         return   fullFormat.format(date);
     }
 
     //date 得到 MM月dd日
     public static String getYRstring(Date date){ // YR -- 月日的意思
-        SimpleDateFormat formater = new SimpleDateFormat("MM月dd日");
-        return   formater.format(date);
+        return   yrFormat.format(date);
     }
 
     //date 得到 11:00
     public static String getTimeString(Date date){
-        SimpleDateFormat formater = new SimpleDateFormat("HH:mm");
-        return   formater.format(date);
+        return   sfFormat.format(date);
     }
 
     //排期中根据点击得到点击的 date
@@ -177,7 +178,7 @@ public class DateUtil {
         return calendar.getTime();
     }
 
-    public static Date dateFromDetail(int year,int month,int day,int hour,int minute){
+    public static Date getDateFromDetail(int year,int month,int day,int hour,int minute){
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_YEAR, year);
         calendar.set(Calendar.MONTH, month);

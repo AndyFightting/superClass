@@ -31,5 +31,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:maxWidth="200dp"/>
+
+        <ImageView
+            android:id="@+id/title_right_image"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="25dp" />
+
+        <TextView
+            android:id="@+id/title_right_tap_tv"
+            android:clickable="true"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:minWidth="60dp"
+            android:gravity="center"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:maxWidth="200dp"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_height" />
     </RelativeLayout>
 </LinearLayout>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/back_gray"
+    tools:context="com.example.suguiming.superclass.studentTab.info.StudentRemarkActivity">
+
+    <include layout="@layout/common_title_layout"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp">
+
+        <com.example.suguiming.superclass.customView.BorderTextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:inner_color="@color/white"
+            app:border_color="@color/black"
+            app:corner_radius="6dp"/>
+        <EditText
+            android:id="@+id/remark_ev"
+            android:hint="备注信息"
+            android:background="@null"
+            android:gravity="top"
+            android:layout_margin="10dp"
+            android:padding="8dp"
+            android:textSize="16sp"
+            android:lineSpacingExtra="6dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+
+    <TextView
+        android:clickable="true"
+        android:onClick="saveTap"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:text="保存"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:layout_height="45dp" />
+
+</LinearLayout>

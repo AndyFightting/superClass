@@ -13,7 +13,8 @@ import com.example.suguiming.superclass.utils.CommonUtil;
 
 public class EditNameSheet extends BaseSheetActivity {
 
-    private EditText nameEv;
+    private static EditText nameEv;
+    private static String preName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +24,26 @@ public class EditNameSheet extends BaseSheetActivity {
         titleTv.setText("修改名称");
 
         nameEv = (EditText) findViewById(R.id.name_ev);
+        if (!CommonUtil.isEmpty(preName)){
+            nameEv.setText(preName);
+        }
+        preName =null;
+
         CommonUtil.showKeyboard(nameEv);
+    }
+
+    @Override
+    protected void onDestroy() {
+        //---类数据还原----
+        preName = "";
+        super.onDestroy();
+    }
+
+    public static void setPreName(String name){
+        preName = name;
+        if (nameEv!=null){
+            nameEv.setText(preName);
+        }
     }
 
     public void imageTaped(View v) {

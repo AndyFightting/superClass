@@ -104,7 +104,7 @@ public class CalendarWeekClass extends SGMScrollView implements View.OnClickList
 
                 Date tapDate = DateUtil.getDateFromTap(beginDate, row, column, false);
                 Intent intent = new Intent(getContext(), AddClassActivity.class);
-                intent.putExtra("taped_date",DateUtil.dateToString(tapDate));
+                intent.putExtra("taped_date",DateUtil.getFullStringFromDate(tapDate));
                 getContext().startActivity(intent);
 
                 break;
@@ -119,7 +119,7 @@ public class CalendarWeekClass extends SGMScrollView implements View.OnClickList
 
                 Date tapDate = DateUtil.getDateFromTap(beginDate, row, column, true);
                 Intent intent = new Intent(getContext(), AddClassActivity.class);
-                intent.putExtra("taped_date",DateUtil.dateToString(tapDate));
+                intent.putExtra("taped_date",DateUtil.getFullStringFromDate(tapDate));
                 getContext().startActivity(intent);
 
                break;

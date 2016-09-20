@@ -55,7 +55,7 @@ public class CalendarWeek extends LinearLayout {
             setTextColorForDate(dayTextView,calendar.getTime());
 
             //周几
-            String weekString = DateUtil.stringOfWeek(week);
+            String weekString = DateUtil.getWeekString(week);
             TextView weekdayTextView = (TextView)day.findViewById(R.id.day_weekday);
             weekdayTextView.setText(weekString);
             setTextColorForDate(weekdayTextView,calendar.getTime());

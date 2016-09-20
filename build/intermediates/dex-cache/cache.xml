@@ -2,11 +2,193 @@
 <items version="2" >
 
     <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/libs/httpcore-4.3.2.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="31fbbff1ddbf98f3aa7377c94d33b0447c646b6e">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpcore-4.3.2_2d84da9676a46a0f485e065fecf8c13c88c89fbc/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="032a4b53def5e2ceedfc2e793b126c0163cfa1dd">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_ed731774384c5b1c8b45a79080a7feb58962e521/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.4/695b63d702f505b9b916e02272e3b6381bade7f/gson-2.4.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="0695b63d702f505b9b916e02272e3b6381bade7f">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/gson-2.4_97f2d43bfe6f0fb0f0adc27a099714d52b0e7ad3/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/libs/android-async-http-1.4.5.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="77bf7cacf9cefe19dc105e5425d2eb1bb5285881">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/2/android-async-http-1.4.5_26f130a556a5dd13cbaefb2294ed4b59169375b9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="f3ee23ef25c9a8fe3d40246d0b7097267963a612">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-24.2.0_a963a09d3b6758ef4ae5fa76139c60c237d0b02b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.0/support-annotations-24.2.0.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="6be858a75633b1f0a2d24cad740db57775cb6871">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-24.2.0_2913c4a7672f28e170bd42520eb9cfbbb71bc673/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/libs/httpmime-4.3.5.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="1dd0d38df9c6d21e893f2e52403f1cd99e91cd81">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpmime-4.3.5_d1ca14e10f0f077932e6987722ea25862fdc32d4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="045be695d968dd707691cc55d23746dbf8cf569a">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_54bc8b93faefc4b36c1cee306953b45103a5366b/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="45f5eda279825ff470e3f51019d374d1ef61e000">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-24.2.0_e14dbd512b2dd293074b5e5721c993476e3c63de/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="f9b41622897665678d31d78e57a361cb0cebcb0d">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-compat-24.2.0_e9aec639644f01b4bdc568c1db64981aea589c23/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="60d7b23621d31e6f42f4f76f16af467e57a20cda">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_6795781e8059dbdfc46746f06d4354c39a3c71cc/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="d8bd2268fdcbfd52c76ade65d9900cd8def93a44">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-fragment-24.2.0_e7cc4c6f5f6ab50907bb37d470ca215086e16ad9/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/libs/httpclient-4.3.5.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="9783d89b8eea20a517a4afc5f979bd2882b54c44">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/2/httpclient-4.3.5_b8b2692903da4a4fe09349d84572c2006f1f6e89/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/libs/ormlite-android-4.48.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="afa06f539a4026c10b247386312aa67404b80a16">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/2/ormlite-android-4.48_e4471cf3573d2f40de5840c29e82f76fadf020bc/classes.dex" />
+    </item>
+    <item
         jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         revision="23.0.0"
-        sha1="f21a02d64681bf6f23c34f9eb5520d14d6e03dbb">
+        sha1="c6a4b0d014a3fb464dc384ba440f4b1adc0e97d5">
         <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_5f701c21af8e67940be02b89a5b5a41e808cfb68/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="fcc945a86ebcbf527429acb8216ec7dae2c06417">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-utils-24.2.0_3bf9fbbab76c15f4ca0047419c3e56d151880467/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="771b3cc0e597b54da25f8086ba73180c59c6bc71">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_552214954fb24cd6765552ca725a387b50fbc090/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/picasso-2.5.2_061bc5c199b3a086f30f2525dc709b8f576e5b6e/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="fed178b1a89c35036daa47c24cc54d83731639e3">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_68e26d84a26faee567d85fe4d705b52440c5f553/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/.gradle/caches/modules-2/files-2.1/com.mcxiaoke.volley/library/1.0.19/a8f23f65fc1e522ee4a1a697ee569901a46741fa/library-1.0.19.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="a8f23f65fc1e522ee4a1a697ee569901a46741fa">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-1.0.19_43b3f90891ae37367e87295d159fa6cff231fae4/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="c84e216d9bf618464d6b9564d71d9a656433e7c4">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-core-ui-24.2.0_a601c8b50f90744722a66f6b84b5f2e348493368/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="6eb9107eb34d2fe2b020662b7fbbec991dcba846">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-media-compat-24.2.0_ec3ff76870a47306d5b40755968f39a3e442e53c/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/libs/ormlite-core-4.48.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="e579bd2905d0399af5029aaaf9817d5fa0ca88a5">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/2/ormlite-core-4.48_266d225f0d726cb0773c28fb91fa46771bab2a00/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="beac40bcc8a320a896dd15f5109cfcaea5e1e0e3">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-24.2.0_5b6bfdf0b215d5da792a17338455abe293bca914/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/.gradle/caches/modules-2/files-2.1/com.squareup/otto/1.3.8/cf615176cd1177edf71d3c9605f8dc148fede6be/otto-1.3.8.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="cf615176cd1177edf71d3c9605f8dc148fede6be">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/otto-1.3.8_5f36dbd1e4f4f8e555dc41f0c40d7a70a681958d/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.0/jars/libs/internal_impl-24.2.0.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="6e02e34594ebe9c0501ffda8dd48497f81b82977">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-24.2.0_044e053b68758cebf38a54dde34acb3b466385c0/classes.dex" />
+    </item>
+    <item
+        jar="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.0/jars/classes.jar"
+        jumboMode="true"
+        revision="23.0.0"
+        sha1="c3c638be6e650b165ab9ae144857b64e82787fad">
+        <dex dex="/Users/suguiming/Desktop/GithubLocal/superClass/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-24.2.0_03b79011ec3b0a11316e8325a1c183ece69cf805/classes.dex" />
     </item>
 
 </items>

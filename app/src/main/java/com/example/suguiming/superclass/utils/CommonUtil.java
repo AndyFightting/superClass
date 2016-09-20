@@ -1,14 +1,20 @@
 package com.example.suguiming.superclass.utils;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Handler;
-import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 import com.example.suguiming.superclass.basic.MyApplication;
+import com.example.suguiming.superclass.utils.alert.AlertSingleListener;
 
 import java.util.Random;
 
@@ -35,6 +41,15 @@ public class CommonUtil {
             }
         }
         return false;
+    }
+
+    public static void makePhoneCall(Activity activity,String phoneString){
+        if (CommonUtil.isPhoneNum(phoneString)){
+            Intent phoneIntent = new Intent("android.intent.action.CALL", Uri.parse("tel:" + phoneString));
+            activity.startActivity(phoneIntent);
+        }else {
+            CommonUtil.showToast("手机号有误");
+        }
     }
 
     public static void showToast(String msg){
@@ -74,7 +89,7 @@ public class CommonUtil {
                     inputMethodManager.toggleSoftInput(0, InputMethodManager.HIDE_NOT_ALWAYS);
                     inputMethodManager.showSoftInput(editText,0);
                 }
-            }, 300);
+            }, 100);
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -90,17 +105,22 @@ public class CommonUtil {
         }
     }
 
+    public static void showSingleAlert(Activity activity, String msg, final AlertSingleListener listener){
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setTitle("提示");
+        builder.setMessage(msg);
+        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                if (listener!= null){
+                    listener.sureTap();
+                }
+            }
+        });
+        AlertDialog dialog = builder.create();
+        dialog.show();
+    }
 
-
-
-//    public void showAlert(String msg){
-//        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-//        builder.setTitle("提示");
-//        builder.setMessage(msg);
-//        builder.setNegativeButton("确定",null);
-//        AlertDialog dialog = builder.create();
-//        dialog.show();
-//    }
 
 
 }

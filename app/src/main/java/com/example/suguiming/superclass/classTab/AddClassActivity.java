@@ -52,7 +52,7 @@ public class AddClassActivity extends BaseSwipeActivity {
 
     private void initTimeData(){
         String tapTimeStr = getIntent().getStringExtra("taped_date");
-        beginDate = DateUtil.stringToDate(tapTimeStr);
+        beginDate = DateUtil.getDateFromFullString(tapTimeStr);
         endDate = DateUtil.getEndDate(beginDate);
 
         Calendar beginCalendar = Calendar.getInstance();

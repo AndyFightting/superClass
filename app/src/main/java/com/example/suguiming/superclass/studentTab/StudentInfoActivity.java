@@ -9,11 +9,16 @@ import android.widget.TextView;
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.BaseSwipeActivity;
 import com.example.suguiming.superclass.basic.baseSheet.ItemTapListener;
+import com.example.suguiming.superclass.utils.alert.AlertUtil;
 import com.example.suguiming.superclass.model.StudentModel;
 import com.example.suguiming.superclass.studentTab.info.EditNameSheet;
 import com.example.suguiming.superclass.studentTab.info.GenderSheet;
 import com.example.suguiming.superclass.studentTab.info.PhoneSheet;
 import com.example.suguiming.superclass.studentTab.info.RemainCountSheet;
+import com.example.suguiming.superclass.studentTab.info.StudentFinishedCourseActivity;
+import com.example.suguiming.superclass.studentTab.info.StudentPhotoRecordActivity;
+import com.example.suguiming.superclass.studentTab.info.StudentRemarkActivity;
+import com.example.suguiming.superclass.utils.alert.AlertListener;
 import com.example.suguiming.superclass.utils.CommonUtil;
 
 public class StudentInfoActivity extends BaseSwipeActivity {
@@ -79,8 +84,17 @@ public class StudentInfoActivity extends BaseSwipeActivity {
             case R.id.phone_layout:
                 phoneTap();
                 break;
+            case R.id.photo_layout:
+                StudentPhotoRecordActivity.startActivity(this, model.getIdString());
+                break;
+            case R.id.remark_layout:
+                StudentRemarkActivity.startActivity(this, model.getIdString());
+                break;
             case R.id.remain_layout:
                 remainCountTap();
+                break;
+            case R.id.finish_layout:
+                StudentFinishedCourseActivity.startActivity(this, model.getIdString());
                 break;
         }
     }
@@ -94,6 +108,7 @@ public class StudentInfoActivity extends BaseSwipeActivity {
                 refreshViews();
             }
         });
+        EditNameSheet.setPreName(model.getNameString());
     }
 
     private void genderTap() {
@@ -116,6 +131,25 @@ public class StudentInfoActivity extends BaseSwipeActivity {
     }
 
     private void phoneTap() {
+        if (CommonUtil.isEmpty(model.getPhoneString())){
+            showEditPhone();
+        }else {
+            AlertUtil.resetButtonNames("打电话","修改电话");
+            AlertUtil.showAlert(this, "您要打电话, 还是要修改电话?", new AlertListener() {
+                @Override
+                public void sureTap() {
+                    showEditPhone();
+                }
+
+                @Override
+                public void cancelTap() {//拨打电话
+                  CommonUtil.makePhoneCall(StudentInfoActivity.this,model.getPhoneString());
+                }
+            });
+        }
+    }
+
+    private void showEditPhone(){
         PhoneSheet.show(this, PhoneSheet.class, new ItemTapListener() {
             @Override
             public void itemTap(View view, String result) {
@@ -124,6 +158,7 @@ public class StudentInfoActivity extends BaseSwipeActivity {
                 refreshViews();
             }
         });
+        PhoneSheet.setPrePhone(model.getPhoneString());
     }
 
     private void remainCountTap() {
@@ -132,7 +167,7 @@ public class StudentInfoActivity extends BaseSwipeActivity {
             public void itemTap(View view, String result) {
                 int count = Integer.parseInt(result);
                 model.setRemainCount(count);
-                StudentModel.updateStudent(model,true);
+                StudentModel.updateStudent(model, true);
 
                 refreshViews();
             }
@@ -142,9 +177,18 @@ public class StudentInfoActivity extends BaseSwipeActivity {
     }
 
     public void deleteStudent(View view) {
+        AlertUtil.showAlert(this, "若删除该学员,则与该学员有关的课程信息都将被删除 !\n\n您确定要删除该学员吗 ?", new AlertListener() {
+            @Override
+            public void sureTap() {
+                StudentModel.deleteStudent(model.getIdString(), true);
+                CommonUtil.showToast("删除成功");
+                finish();
+            }
 
-
+            @Override
+            public void cancelTap() {
+            }
+        });
     }
-
 
 }
