@@ -105,22 +105,4 @@ public class CommonUtil {
         }
     }
 
-    public static void showSingleAlert(Activity activity, String msg, final AlertSingleListener listener){
-        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
-        builder.setTitle("提示");
-        builder.setMessage(msg);
-        builder.setPositiveButton("确定", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                if (listener!= null){
-                    listener.sureTap();
-                }
-            }
-        });
-        AlertDialog dialog = builder.create();
-        dialog.show();
-    }
-
-
-
 }

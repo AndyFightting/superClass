@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.WindowManager;
 
 
@@ -18,6 +19,7 @@ public class BaseSheetActivity extends Activity {
     protected int activityCloseExitAnimation;
 
     public static ItemTapListener itemTapListener;
+    public static Context mContext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,10 @@ public class BaseSheetActivity extends Activity {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
+        if (itemTapListener!=null && mContext!=null){
+            itemTapListener.itemTap(new View(mContext),"");
+        }
+
         dismiss();
         return super.onTouchEvent(event);
     }
@@ -48,13 +54,16 @@ public class BaseSheetActivity extends Activity {
 
     public void dismiss(){
         super.finish();
+        mContext = null;
         overridePendingTransition(activityCloseEnterAnimation, activityCloseExitAnimation);
     }
 
     public static void show(Context context,Class showedActivityClass, ItemTapListener itemTapListener){
+        mContext = context;
+
         BaseSheetActivity.itemTapListener = itemTapListener;
-        Intent intent = new Intent(context,showedActivityClass);
-        context.startActivity(intent);
+        Intent intent = new Intent(mContext,showedActivityClass);
+        mContext.startActivity(intent);
     }
 
 }

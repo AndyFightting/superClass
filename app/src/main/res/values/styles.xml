@@ -47,6 +47,7 @@
         <item name="android:windowBackground">@android:color/transparent</item>
         <item name="android:windowNoTitle">true</item>
         <item name="android:backgroundDimEnabled">false</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <!-- iOs action sheet theme-->
@@ -63,5 +64,21 @@
         <item name="android:activityCloseEnterAnimation">@anim/action_sheet_in</item>
         <item name="android:activityCloseExitAnimation">@anim/action_sheet_out</item>
     </style>
+
+    <!-- iOS present activity theme-->
+    <style name="PresentTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:fitsSystemWindows">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowAnimationStyle">@style/ActivityPresentAnimation</item>
+    </style>
+    <style name="ActivityPresentAnimation" parent="@android:style/Animation.Activity">
+        <item name="android:activityOpenEnterAnimation">@anim/activity_present_in</item>
+        <item name="android:activityOpenExitAnimation">@anim/activity_present_out</item>
+        <item name="android:activityCloseEnterAnimation">@anim/activity_present_in</item>
+        <item name="android:activityCloseExitAnimation">@anim/activity_present_out</item>
+    </style>
+
 
 </resources>

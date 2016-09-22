@@ -103,9 +103,13 @@ public class StudentInfoActivity extends BaseSwipeActivity {
         EditNameSheet.show(this, EditNameSheet.class, new ItemTapListener() {
             @Override
             public void itemTap(View view, String result) {//提交修改才调用了该方法
-                model.setNameString(result);
-                StudentModel.updateStudent(model, true);
-                refreshViews();
+                switch (view.getId()){
+                    case R.id.sheet_yes:
+                        model.setNameString(result);
+                        StudentModel.updateStudent(model, true);
+                        refreshViews();
+                        break;
+                }
             }
         });
         EditNameSheet.setPreName(model.getNameString());
@@ -118,13 +122,15 @@ public class StudentInfoActivity extends BaseSwipeActivity {
                 switch (view.getId()) {
                     case R.id.nan_layout:
                         model.setGender(1);
+                        StudentModel.updateStudent(model, false);
+                        refreshViews();
                         break;
                     case R.id.nv_layout:
                         model.setGender(2);
+                        StudentModel.updateStudent(model, false);
+                        refreshViews();
                         break;
                 }
-                StudentModel.updateStudent(model, false);
-                refreshViews();
             }
         });
         GenderSheet.refreshView(model.getGender());
@@ -153,9 +159,13 @@ public class StudentInfoActivity extends BaseSwipeActivity {
         PhoneSheet.show(this, PhoneSheet.class, new ItemTapListener() {
             @Override
             public void itemTap(View view, String result) {
-                model.setPhoneString(result);
-                StudentModel.updateStudent(model, false);
-                refreshViews();
+                switch (view.getId()){
+                    case R.id.sheet_yes:
+                        model.setPhoneString(result);
+                        StudentModel.updateStudent(model, false);
+                        refreshViews();
+                        break;
+                }
             }
         });
         PhoneSheet.setPrePhone(model.getPhoneString());
@@ -165,11 +175,14 @@ public class StudentInfoActivity extends BaseSwipeActivity {
         RemainCountSheet.show(this, RemainCountSheet.class, new ItemTapListener() {
             @Override
             public void itemTap(View view, String result) {
-                int count = Integer.parseInt(result);
-                model.setRemainCount(count);
-                StudentModel.updateStudent(model, true);
-
-                refreshViews();
+                switch (view.getId()){
+                    case R.id.sheet_yes:
+                        int count = Integer.parseInt(result);
+                        model.setRemainCount(count);
+                        StudentModel.updateStudent(model, true);
+                        refreshViews();
+                        break;
+                }
             }
         });
         RemainCountSheet.refreshPK(model.getRemainCount());

@@ -2,8 +2,15 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.suguiming.superclass">
 
+    <!-- 网络 -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <!-- 电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <!-- sd card -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
 
     <application
         android:name=".basic.MyApplication"
@@ -47,11 +54,19 @@
         <activity
             android:name=".studentTab.info.StudentPhotoRecordActivity"
             android:theme="@style/BackSwipeTheme" />
-        <activity android:name=".studentTab.info.StudentFinishedCourseActivity"
+        <activity
+            android:name=".studentTab.info.StudentFinishedCourseActivity"
             android:theme="@style/BackSwipeTheme" />
-        <activity android:name=".studentTab.info.PhotoSheet"
-            android:theme="@style/ActionSheetTheme"/>
-
+        <activity
+            android:name=".studentTab.info.photoSheet.PhotoSheet"
+            android:theme="@style/ActionSheetTheme" />
+        <activity
+            android:name=".studentTab.info.photoSheet.SelectPhotoSheet"
+            android:theme="@style/AlphaTheme" />
+        <activity
+            android:name=".studentTab.info.photoSheet.AlbumPhotoActivity"
+            android:theme="@style/PresentTheme" />
+        <activity android:name=".studentTab.info.photoSheet.AlbumDirActivity"/>
     </application>
 
 </manifest>

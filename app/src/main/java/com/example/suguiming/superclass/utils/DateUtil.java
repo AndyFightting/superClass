@@ -10,9 +10,9 @@ import java.util.Map;
 public class DateUtil {
 
     public static SimpleDateFormat fullFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.getDefault());
-    public static SimpleDateFormat halfFormat = new SimpleDateFormat("yyyy-MM-dd",Locale.getDefault());
-    public static SimpleDateFormat yrFormat =  new SimpleDateFormat("MM月dd日",Locale.getDefault());
-    public static SimpleDateFormat sfFormat = new SimpleDateFormat("HH:mm",Locale.getDefault());
+    public static SimpleDateFormat halfFormat = new SimpleDateFormat("yyyy-MM-dd", Locale.getDefault());
+    public static SimpleDateFormat yrFormat = new SimpleDateFormat("MM月dd日", Locale.getDefault());
+    public static SimpleDateFormat sfFormat = new SimpleDateFormat("HH:mm", Locale.getDefault());
 
     public static int getCurrentYear() {
         return Calendar.getInstance().get(Calendar.YEAR);
@@ -26,8 +26,19 @@ public class DateUtil {
         return Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
     }
 
+
+    public static int getCurrentHour() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.HOUR_OF_DAY);//24小时制
+    }
+
+    public static int getCurrentMinute() {
+        Calendar calendar = Calendar.getInstance();
+        return calendar.get(Calendar.MINUTE);
+    }
+
     //获取某年某月的1号是星期几
-    public static int getFirstdayWeekOfMonth(int year,int month) {            //日 一 二 三 四 五 六
+    public static int getFirstdayWeekOfMonth(int year, int month) {            //日 一 二 三 四 五 六
         Calendar calendar = Calendar.getInstance();                           //0  1  2  3  4  5 6
         calendar.set(year, month - 1, 1);
 
@@ -45,7 +56,7 @@ public class DateUtil {
             month = 12;
             year -= 1;
         }
-        int[] arr = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+        int[] arr = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
         int days = 0;
 
         if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
@@ -61,8 +72,8 @@ public class DateUtil {
         return days;
     }
 
-   //是否为同一天
-    public static boolean isSameDay(Date date1,Date date2){
+    //是否为同一天
+    public static boolean isSameDay(Date date1, Date date2) {
         String ds1 = halfFormat.format(date1);
         String ds2 = halfFormat.format(date2);
         if (ds1.equals(ds2)) {
@@ -72,13 +83,13 @@ public class DateUtil {
         }
     }
 
-   //是否为周末
-    public static boolean isWeekend(Date date){
+    //是否为周末
+    public static boolean isWeekend(Date date) {
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(date);
 
         int week = calendar.get(Calendar.DAY_OF_WEEK);
-        if (week == 1 || week == 7){
+        if (week == 1 || week == 7) {
             return true;
         }
 
@@ -86,108 +97,108 @@ public class DateUtil {
     }
 
     //星期天第一列，从1开始
-    public static String getWeekString(int week){
-        String[] weeks = {"周日","周一","周二","周三","周四","周五","周六"};
-        return weeks[week-1];
+    public static String getWeekString(int week) {
+        String[] weeks = {"周日", "周一", "周二", "周三", "周四", "周五", "周六"};
+        return weeks[week - 1];
     }
 
     //yyyy-MM-dd HH:mm:ss   转  date
-    public static Date getDateFromFullString(String timeStr){
+    public static Date getDateFromFullString(String timeStr) {
         try {
             return fullFormat.parse(timeStr);
-        }catch (Exception e){
-          e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-       return null;
+        return null;
     }
 
-   //date  转  yyyy-MM-dd HH:mm:ss
-    public static String getFullStringFromDate(Date date){
-         return   fullFormat.format(date);
+    //date  转  yyyy-MM-dd HH:mm:ss
+    public static String getFullStringFromDate(Date date) {
+        return fullFormat.format(date);
     }
 
     //date 得到 MM月dd日
-    public static String getYRstring(Date date){ // YR -- 月日的意思
-        return   yrFormat.format(date);
+    public static String getYRstring(Date date) { // YR -- 月日的意思
+        return yrFormat.format(date);
     }
 
     //date 得到 11:00
-    public static String getTimeString(Date date){
-        return   sfFormat.format(date);
+    public static String getTimeString(Date date) {
+        return sfFormat.format(date);
     }
 
     //排期中根据点击得到点击的 date
-    public static Date getDateFromTap(Date beginDate,int row ,int column,boolean hasHalf){//行，列 从1 开始
+    public static Date getDateFromTap(Date beginDate, int row, int column, boolean hasHalf) {//行，列 从1 开始
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(beginDate);
         calendar.add(Calendar.DAY_OF_YEAR, column - 1);
-        calendar.set(Calendar.HOUR_OF_DAY,row+5);
-        if (hasHalf){
-            calendar.set(Calendar.MINUTE,30);
-        }else {
-            calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.HOUR_OF_DAY, row + 5);
+        if (hasHalf) {
+            calendar.set(Calendar.MINUTE, 30);
+        } else {
+            calendar.set(Calendar.MINUTE, 0);
         }
-        calendar.set(Calendar.SECOND,0);
-        calendar.set(Calendar.MILLISECOND,0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
     }
 
     //时间起点 06:00  这里的row 1小时分两段
     //排期中根据点date 得到对应 row column都从1 开始
-     public static Map<String,String> getRowAndColumn(Date selectedDate){
-         Map<String,String> resultMap = new HashMap<>();
+    public static Map<String, String> getRowAndColumn(Date selectedDate) {
+        Map<String, String> resultMap = new HashMap<>();
 
-         int column;
-         Calendar calendar = Calendar.getInstance();
-         calendar.setTime(selectedDate);
-         int tmpNum = calendar.get(Calendar.DAY_OF_WEEK)-1;//DAY_OF_WEEK说明：calendar周日为一周的第一天==1，周六最后一天 ==7
-         if (tmpNum == 0){
-             tmpNum =7;
-         }
-         column = tmpNum;
-         resultMap.put("column",column+"");
+        int column;
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(selectedDate);
+        int tmpNum = calendar.get(Calendar.DAY_OF_WEEK) - 1;//DAY_OF_WEEK说明：calendar周日为一周的第一天==1，周六最后一天 ==7
+        if (tmpNum == 0) {
+            tmpNum = 7;
+        }
+        column = tmpNum;
+        resultMap.put("column", column + "");
 
-         int row;
-         int beginHour = 6*2;//hour 1小时分两段
-         String timeStr = DateUtil.getTimeString(selectedDate);//如11:30
-         int hour = Integer.parseInt(timeStr.substring(0,2))*2;//这里的hour 1小时分两段
-         row = hour-beginHour+1;
+        int row;
+        int beginHour = 6 * 2;//hour 1小时分两段
+        String timeStr = DateUtil.getTimeString(selectedDate);//如11:30
+        int hour = Integer.parseInt(timeStr.substring(0, 2)) * 2;//这里的hour 1小时分两段
+        row = hour - beginHour + 1;
 
-         int minute = Integer.parseInt(timeStr.substring(3));
-         if (minute == 30){
-             row++;
-         }
-         resultMap.put("row", row + "");
+        int minute = Integer.parseInt(timeStr.substring(3));
+        if (minute == 30) {
+            row++;
+        }
+        resultMap.put("row", row + "");
 
-         return resultMap;
-     }
+        return resultMap;
+    }
 
     //点击排期时默认的endDate 是当前时间加1小时
-    public static Date getEndDate(Date beginDate){
+    public static Date getEndDate(Date beginDate) {
         String timeStr = DateUtil.getTimeString(beginDate);
         int beginHour = Integer.parseInt(timeStr.substring(0, 2));
         int beginMinute = Integer.parseInt(timeStr.substring(3));
 
         Calendar calendar = Calendar.getInstance();
         calendar.setTime(beginDate);
-        if (beginHour == 22 && beginMinute == 30){
+        if (beginHour == 22 && beginMinute == 30) {
             calendar.add(Calendar.MINUTE, 30);
-        }else {
+        } else {
             calendar.add(Calendar.HOUR_OF_DAY, +1);
         }
         return calendar.getTime();
     }
 
-    public static Date getDateFromDetail(int year,int month,int day,int hour,int minute){
+    public static Date getDateFromDetail(int year, int month, int day, int hour, int minute) {
         Calendar calendar = Calendar.getInstance();
         calendar.set(Calendar.DAY_OF_YEAR, year);
         calendar.set(Calendar.MONTH, month);
         calendar.set(Calendar.DAY_OF_MONTH, day);
 
-        calendar.set(Calendar.HOUR_OF_DAY,hour);
-        calendar.set(Calendar.MINUTE,minute);
-        calendar.set(Calendar.SECOND,0);
-        calendar.set(Calendar.MILLISECOND,0);
+        calendar.set(Calendar.HOUR_OF_DAY, hour);
+        calendar.set(Calendar.MINUTE, minute);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
         return calendar.getTime();
     }
 
@@ -198,6 +209,26 @@ public class DateUtil {
         } else {
             return num + "";
         }
+    }
+
+
+    //相差天数
+    public static long getSpaceDays(Date startDate, Date endDate) {
+        Calendar fromCalendar = Calendar.getInstance();
+        fromCalendar.setTime(startDate);
+        fromCalendar.set(Calendar.HOUR_OF_DAY, 0);
+        fromCalendar.set(Calendar.MINUTE, 0);
+        fromCalendar.set(Calendar.SECOND, 0);
+        fromCalendar.set(Calendar.MILLISECOND, 0);
+
+        Calendar toCalendar = Calendar.getInstance();
+        toCalendar.setTime(endDate);
+        toCalendar.set(Calendar.HOUR_OF_DAY, 0);
+        toCalendar.set(Calendar.MINUTE, 0);
+        toCalendar.set(Calendar.SECOND, 0);
+        toCalendar.set(Calendar.MILLISECOND, 0);
+
+        return (toCalendar.getTime().getTime() - fromCalendar.getTime().getTime()) / (1000 * 60 * 60 * 24);
     }
 
 }

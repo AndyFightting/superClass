@@ -2,7 +2,7 @@ package com.example.suguiming.superclass.studentTab.info;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.media.Image;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -10,8 +10,10 @@ import android.widget.TextView;
 
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.BaseSwipeActivity;
-import com.example.suguiming.superclass.basic.baseSheet.ItemTapListener;
 import com.example.suguiming.superclass.model.StudentModel;
+import com.example.suguiming.superclass.studentTab.info.photoSheet.PhotoResultListener;
+import com.example.suguiming.superclass.studentTab.info.photoSheet.PhotoType;
+import com.example.suguiming.superclass.studentTab.info.photoSheet.SelectPhotoSheet;
 import com.example.suguiming.superclass.utils.CommonUtil;
 
 public class StudentPhotoRecordActivity extends BaseSwipeActivity implements View.OnClickListener {
@@ -52,19 +54,13 @@ public class StudentPhotoRecordActivity extends BaseSwipeActivity implements Vie
     }
 
     private void titleRightTap() {
-        PhotoSheet.show(this, PhotoSheet.class, new ItemTapListener() {
-            @Override
-            public void itemTap(View view, String result) {
-                switch (view.getId()){
-                    case R.id.camera_tv:
-                        break;
-                    case R.id.phone_tv:
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-
+       SelectPhotoSheet.show(this, PhotoType.FULL_IMAGE, new PhotoResultListener() {
+           @Override
+           public void complete(Bitmap bitmap) {
+               if (bitmap!=null){
+                   CommonUtil.showToast("获取成功");
+               }
+           }
+       });
     }
 }

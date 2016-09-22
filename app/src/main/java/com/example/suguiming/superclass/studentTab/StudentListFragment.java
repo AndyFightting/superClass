@@ -3,6 +3,7 @@ package com.example.suguiming.superclass.studentTab;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,11 +17,15 @@ import com.example.suguiming.superclass.MainActivity;
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.BaseFragment;
 import com.example.suguiming.superclass.model.StudentModel;
+import com.example.suguiming.superclass.studentTab.info.photoSheet.AlbumDirActivity;
 import com.example.suguiming.superclass.utils.CommonUtil;
+import com.example.suguiming.superclass.utils.FileUtil;
+import com.example.suguiming.superclass.utils.ImageUtil;
 import com.example.suguiming.superclass.utils.OttoUtil;
 import com.squareup.otto.Subscribe;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -63,8 +68,12 @@ public class StudentListFragment extends BaseFragment implements View.OnClickLis
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                StudentModel model = studentModelList.get(i);
-                StudentInfoActivity.startActivity(mainActivity,model.getIdString());
+//                StudentModel model = studentModelList.get(i);
+//                StudentInfoActivity.startActivity(mainActivity,model.getIdString());
+
+                Intent intent = new Intent(mainActivity, AlbumDirActivity.class);
+                mainActivity.startActivity(intent);
+
             }
         });
     }
