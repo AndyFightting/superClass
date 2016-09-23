@@ -68,12 +68,8 @@ public class StudentListFragment extends BaseFragment implements View.OnClickLis
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                StudentModel model = studentModelList.get(i);
-//                StudentInfoActivity.startActivity(mainActivity,model.getIdString());
-
-                Intent intent = new Intent(mainActivity, AlbumDirActivity.class);
-                mainActivity.startActivity(intent);
-
+                StudentModel model = studentModelList.get(i);
+                StudentInfoActivity.startActivity(mainActivity,model.getIdString());
             }
         });
     }

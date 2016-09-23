@@ -65,8 +65,9 @@
             android:theme="@style/AlphaTheme" />
         <activity
             android:name=".studentTab.info.photoSheet.AlbumPhotoActivity"
+            android:theme="@style/BackSwipeTheme"/>
+        <activity android:name=".studentTab.info.photoSheet.AlbumDirActivity"
             android:theme="@style/PresentTheme" />
-        <activity android:name=".studentTab.info.photoSheet.AlbumDirActivity"/>
     </application>
 
 </manifest>

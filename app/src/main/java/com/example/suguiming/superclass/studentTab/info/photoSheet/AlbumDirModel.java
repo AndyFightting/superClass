@@ -1,16 +1,35 @@
 package com.example.suguiming.superclass.studentTab.info.photoSheet;
 
 /**
- * Created by suguiming on 16/9/22.
+ * Created by suguiming on 16/9/23.
  */
 public class AlbumDirModel {
-    public String photoPath;
 
-    public String getPhotoPath() {
-        return photoPath;
+    private String folderImagePath;
+    private String folderName;
+    private int imageCount;
+
+    public String getFolderImagePath() {
+        return folderImagePath;
     }
 
-    public void setPhotoPath(String photoPath) {
-        this.photoPath = photoPath;
+    public void setFolderImagePath(String folderImagePath) {
+        this.folderImagePath = folderImagePath;
+    }
+
+    public String getFolderName() {
+        return folderName;
+    }
+
+    public void setFolderName(String folderName) {
+        this.folderName = folderName;
+    }
+
+    public int getImageCount() {
+        return imageCount;
+    }
+
+    public void setImageCount(int imageCount) {
+        this.imageCount = imageCount;
     }
 }

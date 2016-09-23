@@ -19,9 +19,9 @@ public class PhotoSheet extends BaseSheetActivity {
     }
 
     public void itemTap(View view){
+        dismiss();
         if (itemTapListener != null){
             itemTapListener.itemTap(view,"");
         }
-        dismiss();
     }
 }

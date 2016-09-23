@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.baseSheet.ItemTapListener;
@@ -21,6 +22,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Date;
 
+//这是一个透明activity,用来处理相机相册回调
 public class SelectPhotoSheet extends AppCompatActivity {
 
     public static final int TAKE_PHOTO_CODE = 1;
@@ -43,9 +45,9 @@ public class SelectPhotoSheet extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        initData();
-        showSheet();
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
+        showSheet();
     }
 
     public static void show(Activity activity, PhotoType type, PhotoResultListener listener) {
@@ -56,16 +58,14 @@ public class SelectPhotoSheet extends AppCompatActivity {
         activity.startActivity(intent);
     }
 
-    private void initData() {
-        imageUri = null;
-        imageUri = Uri.fromFile(new File(getPhotoPath()));
-    }
-
     public String getPhotoPath() {
         return Environment.getExternalStorageDirectory() + "/" + imageName;
     }
 
     public void showSheet() {
+        imageUri = null;
+        imageUri = Uri.fromFile(new File(getPhotoPath()));
+
         PhotoSheet.show(this, PhotoSheet.class, new ItemTapListener() {
             @Override
             public void itemTap(View view, String result) {
@@ -76,7 +76,8 @@ public class SelectPhotoSheet extends AppCompatActivity {
                     case R.id.phone_tv:
                         photoTap();
                         break;
-                    default:
+                    default://点击sheet背景
+                        finish();
                         break;
                 }
             }
@@ -96,15 +97,30 @@ public class SelectPhotoSheet extends AppCompatActivity {
     }
 
     private void photoTap() {
-        if (photoType == PhotoType.FULL_IMAGE) {//全尺寸
-            Intent intent = new Intent(Intent.ACTION_PICK);
-            intent.setType("image/*");
-            startActivityForResult(intent, ALBUM_FULL_CODE);
-        } else {//正方形图片
-            Intent intent = new Intent(ALBUM_ACTION);
-            intent.setType("image/*");
-            startActivityForResult(intent, ALBUM_CHOOSE_CODE);
-        }
+
+        AlbumDirActivity.startActivity(this, new AlbumResultListener() {
+            @Override
+            public void complete(View tapedView) {
+                switch (tapedView.getId()){
+                    case R.id.back_image:
+                        finish();
+                        break;
+                }
+            }
+        });
+
+
+
+
+//        if (photoType == PhotoType.FULL_IMAGE) {//全尺寸
+//            Intent intent = new Intent(Intent.ACTION_PICK);
+//            intent.setType("image/*");
+//            startActivityForResult(intent, ALBUM_FULL_CODE);
+//        } else {//正方形图片
+//            Intent intent = new Intent(ALBUM_ACTION);
+//            intent.setType("image/*");
+//            startActivityForResult(intent, ALBUM_CHOOSE_CODE);
+//        }
     }
 
     @Override

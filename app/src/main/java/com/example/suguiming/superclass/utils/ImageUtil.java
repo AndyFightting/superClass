@@ -6,7 +6,10 @@ import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.media.ThumbnailUtils;
+import android.net.Uri;
 import android.provider.MediaStore;
+
+import com.example.suguiming.superclass.basic.MyApplication;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
@@ -16,6 +19,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 /**
  * Created by suguiming on 16/9/18.
@@ -24,6 +28,7 @@ import java.util.HashMap;
 // Thumbnails  ThumbnailUtils
 public class ImageUtil {
 
+    public static final MyApplication application = MyApplication.getInstance();
 //    //保存图片
 //    public void saveImage(Bitmap bmp, String imgName)
 //            throws FileNotFoundException {
@@ -45,55 +50,7 @@ public class ImageUtil {
 //    public String getImgPath(String imgName){
 //        return getFilesDir() + "/" +imgName+ ".jpg";
 //    }
-
-
-    public static ArrayList<HashMap<String,String>> getLocalImages(Context context) {
-        ArrayList<HashMap<String,String>> mapArrayList = new ArrayList<>();
-        HashMap<String,String> pictureMap;
-
-        ContentResolver cr = context.getContentResolver();
-        //先得到缩略图的URL和对应的图片id
-        Cursor cursor = cr.query(
-                MediaStore.Images.Thumbnails.EXTERNAL_CONTENT_URI,
-                new String[]{
-                        MediaStore.Images.Thumbnails.IMAGE_ID,
-                        MediaStore.Images.Thumbnails.DATA
-                },
-                null,
-                null,
-                null);
-        if (cursor.moveToFirst()) {
-            do {
-                pictureMap = new HashMap<>();
-                pictureMap.put("image_id_path",cursor.getInt(0)+"");
-                pictureMap.put("thumbnail_path",cursor.getString(1));
-                mapArrayList.add(pictureMap);
-            } while (cursor.moveToNext());
-            cursor.close();
-        }
-        //再得到正常图片的path
-        for (int i = 0;i<mapArrayList.size();i++) {
-            pictureMap = mapArrayList.get(i);
-            String media_id = pictureMap.get("image_id_path");
-            cursor = cr.query(MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
-                    new String[]{
-                            MediaStore.Images.Media.DATA
-                    },
-                    MediaStore.Audio.Media._ID+"="+media_id,
-                    null,
-                    null
-            );
-            if (cursor.moveToFirst()) {
-                do {
-                    pictureMap.put("image_id",cursor.getString(0));
-                    mapArrayList.set(i,pictureMap);
-                } while (cursor.moveToNext());
-                cursor.close();
-            }
-        }
-        return mapArrayList;
-    }
-
+//
 //    public void saveBitmapFile(Bitmap bitmap){
 //        File file=new File("/mnt/sdcard/pic/01.jpg");//将要保存图片的路径
 //        try {
@@ -105,5 +62,8 @@ public class ImageUtil {
 //            e.printStackTrace();
 //        }
 //    }
+
+
+
 
 }
