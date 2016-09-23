@@ -15,12 +15,14 @@ import android.view.WindowManager;
 
 import com.example.suguiming.superclass.R;
 import com.example.suguiming.superclass.basic.baseSheet.ItemTapListener;
+import com.example.suguiming.superclass.utils.CommonUtil;
 
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.Date;
+import java.util.List;
 
 //这是一个透明activity,用来处理相机相册回调
 public class SelectPhotoSheet extends AppCompatActivity {
@@ -97,13 +99,15 @@ public class SelectPhotoSheet extends AppCompatActivity {
     }
 
     private void photoTap() {
-
         AlbumDirActivity.startActivity(this, new AlbumResultListener() {
             @Override
-            public void complete(View tapedView) {
+            public void complete(View tapedView, List<String> pathList) {
                 switch (tapedView.getId()){
                     case R.id.back_image:
                         finish();
+                        break;
+                    case R.id.sure_tv:
+                        CommonUtil.showToast("ssss"+pathList.size());
                         break;
                 }
             }

@@ -10,5 +10,12 @@
         android:background="@color/white"
         android:layout_width="100dp"
         android:layout_height="100dp" />
-
+    <ImageView
+        android:id="@+id/check_image"
+        android:clickable="true"
+        android:layout_margin="5dp"
+        android:src="@mipmap/checked_no"
+        android:layout_alignParentRight="true"
+        android:layout_width="20dp"
+        android:layout_height="20dp" />
 </RelativeLayout>

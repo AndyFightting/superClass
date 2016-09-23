@@ -100,7 +100,7 @@ public class AlbumDirActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 List<String> imagePathList = dirMap.get(folderList.get(position).getFolderName());
-                AlbumPhotoActivity.startActivity(AlbumDirActivity.this,imagePathList);
+                AlbumPhotoActivity.startActivity(AlbumDirActivity.this,imagePathList,resultListener);
             }
         });
     }
@@ -142,7 +142,7 @@ public class AlbumDirActivity extends AppCompatActivity {
     public void backImageTap(View v) {
         finish();
         if (resultListener!=null){
-            resultListener.complete(backImage);
+            resultListener.complete(backImage,null);
         }
     }
 
@@ -150,7 +150,7 @@ public class AlbumDirActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
         if (resultListener!=null){
-            resultListener.complete(backImage);
+            resultListener.complete(backImage,null);
         }
     }
 
